@@ -9,19 +9,22 @@ import oracle.jms.AQjmsSession;
 import oracle.jms.AQjmsTopicConnectionFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 import javax.jms.*;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
-
+@Component
 public class OracleAqUtil {
 
     static final Logger logger= LoggerFactory.getLogger (OracleAqUtil.class);
     @Qualifier("aqDataSource")
+    @Autowired
     private DataSource dataSource;
 
     private static AQSession aqSession = null;
@@ -30,11 +33,11 @@ public class OracleAqUtil {
     private static Topic topic = null;
     private static TopicSubscriber topicSubscriber = null;
     private static TopicPublisher topicPublisher = null;
-    @Value ("${Aq.schema}")
+    @Value ("${aq.config.schema}")
     private String sSchema=null;
-    @Value ("${Aq.queuename}")
+    @Value ("${aq.config.queuename}")
     private String sQueueName=null;
-    @Value ("${Aq.subscription}")
+    @Value ("${aq.config.subscription}")
     private String sSubscription=null;
 
     public void initAQ ()

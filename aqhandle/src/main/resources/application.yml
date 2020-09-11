@@ -23,20 +23,35 @@ spring:
      test-while-idle: true
      test-on-borrow: false
      test-on-return: false
-  aq:
-    datasource:
-      username:11
-      url:11
-      password:11
-      driver-class-name:211
+    aq:
+      username: aq_connect_user
+      password: oracle123
+      url: jdbc:oracle:thin:@10.46.91.101:1521:oimdb
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+      type: com.alibaba.druid.pool.DruidDataSource
+      # 下面为连接池的补充设置，应用到上面所有数据源中
+      # 初始化大小，最小，最大
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      # 配置获取连接等待超时的时间
+      max-wait: 60000
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      time-between-eviction-runs-millis: 60000
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1 FROM DUAL
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
 
-Aq:
-  #aq队列用户
-  schema:
-  #aq队列名称
-  queuename:
-  #aq消息订阅者标识
-  subscription:
+aq:
+  config:
+    schema: AQTEST
+    queuename: TEST_AQ_QUEUE
+    subscription: OIM_AQ_IMP_TEST
+   #aq队列名称
+   #aq消息订阅者标识
 
 
 
