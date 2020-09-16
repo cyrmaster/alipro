@@ -10,33 +10,33 @@ import java.util.Date;
 public class OperatorOrganOa {
     @Id
     @Column(name="OPERATOR_ID")
-    private Long operatorId;
+    private Integer operatorId;
     @Column(name="OA_ORG_ID")
-    private Integer oaOrgId;
+    private Integer oaOrgId=null;
     @Column(name="ERP_ORG_ID")
-    private Integer erpOrgId;
+    private Integer erpOrgId=null;
     @Column(name="OPERATOR_TYPE")
-    private Integer operatorType;
+    private Integer operatorType=null;
     @Column(name="OPERATOR_SUB_TYPE")
-    private Integer operatorSubType;
+    private Integer operatorSubType=null;
     @Column(name="IS_AUTHORITY")
-    private Integer isAuthority;
+    private Integer isAuthority=null;
     @Column(name="MODIFY_OPERATOR_ID")
-    private Integer modifyOperatorId;
+    private Integer modifyOperatorId=null;
     @Column(name="MODIFY_TIME")
-    private Date modifyTime;
+    private Date modifyTime=null;
     @Column(name="MODIFY_CONTENT")
-    private String modifyContent;
+    private String modifyContent=null;
     @Column(name="HIS_SEQ_ID")
-    private Long hisSeqId;
+    private Long hisSeqId=null;
     @Column(name="SUB_ERP_ORG_ID")
-    private Integer subErpOrgId;
+    private Integer subErpOrgId=null;
 
-    public Long getOperatorId() {
+    public Integer getOperatorId () {
         return operatorId;
     }
 
-    public void setOperatorId(Long operatorId) {
+    public void setOperatorId (Integer operatorId) {
         this.operatorId = operatorId;
     }
 

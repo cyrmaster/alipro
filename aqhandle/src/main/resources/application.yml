@@ -2,10 +2,17 @@ spring:
   main:
     web-application-type: NONE
   datasource:
+    #账务库数据源配置
     account:
+      #测试bopsys库
+#     username: bopsys
+#     password: bopsys
+#     url: jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.47.233.133)(PORT = 1521))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = arcdb)))
+#     driver-class-name: oracle.jdbc.driver.OracleDriver
+      #开发bopsys库
      username: bopsys
-     password: bopsys
-     url: jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.47.233.133)(PORT = 1521))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = arcdb)))
+     password: T%RXxV#h$2
+     url: jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS =(COMMUNITY = tcp) (PROTOCOL = TCP) (HOST =10.1.0.211 )(PORT = 1521))(CONNECT_DATA =(SERVICE_NAME = kf)))
      driver-class-name: oracle.jdbc.driver.OracleDriver
      type: com.alibaba.druid.pool.DruidDataSource
     # 下面为连接池的补充设置，应用到上面所有数据源中
@@ -23,6 +30,7 @@ spring:
      test-while-idle: true
      test-on-borrow: false
      test-on-return: false
+    #所在数据库数据源配置
     aq:
       username: aq_connect_user
       password: oracle123
@@ -47,11 +55,24 @@ spring:
 
 aq:
   config:
+    #aq队列用户
     schema: AQTEST
+    #aq队列名称
     queuename: TEST_AQ_QUEUE
+    #aq队列订阅者
     subscription: OIM_AQ_IMP_TEST
-   #aq队列名称
-   #aq消息订阅者标识
+
+# slf4j日志配置
+logging:
+ file:
+   name: ${user.dir}/log/aqhandle-${time}.log
+  # 配置级别
+  #分包配置级别，即不同的目录下可以使用不同的级别
+ level:
+  com: error
+  # 在不指定路径，只指定输出日志的文件名，默认输出至当前项目下
+  # 若指定，则会输出至指定目录下
+
 
 
 

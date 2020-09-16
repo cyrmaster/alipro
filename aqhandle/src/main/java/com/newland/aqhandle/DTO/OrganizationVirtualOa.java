@@ -1,16 +1,13 @@
 package com.newland.aqhandle.DTO;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 @Entity
-@Table(name = "organization_oa")
-public class OrganizationOa {
+@Table(name = "organization_oa_virtual")
+public class OrganizationVirtualOa {
     @Id
-    @Column(name="ORG_ID")
-    private Integer orgId;
+    @Column(name="BACK_ORG_ID")
+    private Integer backOrgId;
     @Column(name="NAME")
     private String name=null;
     @Column(name="ORG_TYPE")
@@ -55,188 +52,188 @@ public class OrganizationOa {
     private Integer orgCurLevel=null;
     @Column(name="IS_CITY")
     private Integer isCity=null;
-   
-    public Integer getOrgId() {
-        return orgId;
+
+    public Integer getBackOrgId () {
+        return backOrgId;
     }
 
-    public void setOrgId(Integer orgId) {
-        this.orgId = orgId;
+    public void setBackOrgId (Integer backOrgId) {
+        this.backOrgId = backOrgId;
     }
 
-    public String getName() {
+    public String getName () {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+    public void setName (String name) {
+        this.name = name;
     }
 
-    public Integer getOrgType() {
+    public Integer getOrgType () {
         return orgType;
     }
 
-    public void setOrgType(Integer orgType) {
+    public void setOrgType (Integer orgType) {
         this.orgType = orgType;
     }
 
-    public Integer getOrgLevel() {
+    public Integer getOrgLevel () {
         return orgLevel;
     }
 
-    public void setOrgLevel(Integer orgLevel) {
+    public void setOrgLevel (Integer orgLevel) {
         this.orgLevel = orgLevel;
     }
 
-    public Integer getOrgHomeType() {
+    public Integer getOrgHomeType () {
         return orgHomeType;
     }
 
-    public void setOrgHomeType(Integer orgHomeType) {
+    public void setOrgHomeType (Integer orgHomeType) {
         this.orgHomeType = orgHomeType;
     }
 
-    public Integer getOrgProperty() {
+    public Integer getOrgProperty () {
         return orgProperty;
     }
 
-    public void setOrgProperty(Integer orgProperty) {
+    public void setOrgProperty (Integer orgProperty) {
         this.orgProperty = orgProperty;
     }
 
-    public String getOrgCode() {
+    public String getOrgCode () {
         return orgCode;
     }
 
-    public void setOrgCode(String orgCode) {
-        this.orgCode = orgCode == null ? null : orgCode.trim();
+    public void setOrgCode (String orgCode) {
+        this.orgCode = orgCode;
     }
 
-    public Integer getSuperOrgId() {
+    public Integer getSuperOrgId () {
         return superOrgId;
     }
 
-    public void setSuperOrgId(Integer superOrgId) {
+    public void setSuperOrgId (Integer superOrgId) {
         this.superOrgId = superOrgId;
     }
 
-    public Integer getHomeCity() {
+    public Integer getHomeCity () {
         return homeCity;
     }
 
-    public void setHomeCity(Integer homeCity) {
+    public void setHomeCity (Integer homeCity) {
         this.homeCity = homeCity;
     }
 
-    public Integer getHomeCounty() {
+    public Integer getHomeCounty () {
         return homeCounty;
     }
 
-    public void setHomeCounty(Integer homeCounty) {
+    public void setHomeCounty (Integer homeCounty) {
         this.homeCounty = homeCounty;
     }
 
-    public Integer getStatus() {
+    public Integer getStatus () {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus (Integer status) {
         this.status = status;
     }
 
-    public Date getInureTime() {
+    public Date getInureTime () {
         return inureTime;
     }
 
-    public void setInureTime(Date inureTime) {
+    public void setInureTime (Date inureTime) {
         this.inureTime = inureTime;
     }
 
-    public Date getExpireTime() {
+    public Date getExpireTime () {
         return expireTime;
     }
 
-    public void setExpireTime(Date expireTime) {
+    public void setExpireTime (Date expireTime) {
         this.expireTime = expireTime;
     }
 
-    public Integer getModifyOperatorId() {
+    public Integer getModifyOperatorId () {
         return modifyOperatorId;
     }
 
-    public void setModifyOperatorId(Integer modifyOperatorId) {
+    public void setModifyOperatorId (Integer modifyOperatorId) {
         this.modifyOperatorId = modifyOperatorId;
     }
 
-    public Date getModifyTime() {
+    public Date getModifyTime () {
         return modifyTime;
     }
 
-    public void setModifyTime(Date modifyTime) {
+    public void setModifyTime (Date modifyTime) {
         this.modifyTime = modifyTime;
     }
 
-    public String getModifyContent() {
+    public String getModifyContent () {
         return modifyContent;
     }
 
-    public void setModifyContent(String modifyContent) {
-        this.modifyContent = modifyContent == null ? null : modifyContent.trim();
+    public void setModifyContent (String modifyContent) {
+        this.modifyContent = modifyContent;
     }
 
-    public Long getHisSeqId() {
+    public Long getHisSeqId () {
         return hisSeqId;
     }
 
-    public void setHisSeqId(Long hisSeqId) {
+    public void setHisSeqId (Long hisSeqId) {
         this.hisSeqId = hisSeqId;
     }
 
-    public String getDescription() {
+    public String getDescription () {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description == null ? null : description.trim();
+    public void setDescription (String description) {
+        this.description = description;
     }
 
-    public String getOrgName() {
+    public String getOrgName () {
         return orgName;
     }
 
-    public void setOrgName(String orgName) {
-        this.orgName = orgName == null ? null : orgName.trim();
+    public void setOrgName (String orgName) {
+        this.orgName = orgName;
     }
 
-    public String getPersonLiable1() {
+    public String getPersonLiable1 () {
         return personLiable1;
     }
 
-    public void setPersonLiable1(String personLiable1) {
-        this.personLiable1 = personLiable1 == null ? null : personLiable1.trim();
+    public void setPersonLiable1 (String personLiable1) {
+        this.personLiable1 = personLiable1;
     }
 
-    public String getPersonLiable2() {
+    public String getPersonLiable2 () {
         return personLiable2;
     }
 
-    public void setPersonLiable2(String personLiable2) {
-        this.personLiable2 = personLiable2 == null ? null : personLiable2.trim();
+    public void setPersonLiable2 (String personLiable2) {
+        this.personLiable2 = personLiable2;
     }
 
-    public Integer getOrgCurLevel() {
+    public Integer getOrgCurLevel () {
         return orgCurLevel;
     }
 
-    public void setOrgCurLevel(Integer orgCurLevel) {
+    public void setOrgCurLevel (Integer orgCurLevel) {
         this.orgCurLevel = orgCurLevel;
     }
 
-    public Integer getIsCity() {
+    public Integer getIsCity () {
         return isCity;
     }
 
-    public void setIsCity(Integer isCity) {
+    public void setIsCity (Integer isCity) {
         this.isCity = isCity;
     }
 }

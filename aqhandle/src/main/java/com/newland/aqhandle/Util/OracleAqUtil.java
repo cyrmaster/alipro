@@ -21,24 +21,44 @@ import java.sql.Connection;
 import java.sql.SQLException;
 @Component
 public class OracleAqUtil {
-
-    static final Logger logger= LoggerFactory.getLogger (OracleAqUtil.class);
+    private static ThreadLocal<OracleAqUtil> oracleAqUtilThreadLocal=new ThreadLocal<> ();
+    private static final Logger logger= LoggerFactory.getLogger (OracleAqUtil.class);
     @Qualifier("aqDataSource")
     @Autowired
     private DataSource dataSource;
 
-    private static AQSession aqSession = null;
-    private static TopicConnection topicConnection = null;
-    private static TopicSession topicSession = null;
-    private static Topic topic = null;
-    private static TopicSubscriber topicSubscriber = null;
-    private static TopicPublisher topicPublisher = null;
+    public static AQSession aqSession = null;
+    public static TopicConnection topicConnection = null;
+    public static TopicSession topicSession = null;
+    public static Topic topic = null;
+    public static TopicSubscriber topicSubscriber = null;
+    public static TopicPublisher topicPublisher = null;
     @Value ("${aq.config.schema}")
-    private String sSchema=null;
+    public String sSchema=null;
     @Value ("${aq.config.queuename}")
-    private String sQueueName=null;
+    public String sQueueName=null;
     @Value ("${aq.config.subscription}")
-    private String sSubscription=null;
+    public String sSubscription=null;
+
+    public static OracleAqUtil create()
+    {
+        OracleAqUtil oracleAqUtil=oracleAqUtilThreadLocal.get ();
+        if(oracleAqUtil!=null)
+        {
+            return oracleAqUtil;
+        }
+        oracleAqUtil=new OracleAqUtil ();
+        oracleAqUtilThreadLocal.set (oracleAqUtil);
+        return oracleAqUtil;
+    }
+
+    public DataSource getDataSource () {
+        return dataSource;
+    }
+
+    public void setDataSource (DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
 
     public void initAQ ()
             throws ClassNotFoundException, AQException, JMSException {

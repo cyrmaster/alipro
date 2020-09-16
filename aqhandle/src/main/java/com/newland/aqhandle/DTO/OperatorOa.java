@@ -9,109 +9,109 @@ import java.util.Date;
 @Table(name = "operator_oa")
 public class OperatorOa {
     @Id
-    private Long operatorId;
+    private Integer operatorId=null;
 
-    private String name;
+    private String name=null;
 
-    private String passwd;
+    private String passwd=null;
 
     @Column(name="PASSWD_CHANGE_INTERVAL")
-    private Integer passwdChangeIntegererval;
+    private Integer passwdChangeIntegererval=null;
 
     @Column(name="LAST_PASSWD_CHANGE_TIME")
-    private Date lastPasswdChangeTime;
+    private Date lastPasswdChangeTime=null;
 
-    private Integer status;
+    private Integer status=null;
 
     @Column(name="IDENTIFY_ID")
-    private String identifyId;
+    private String identifyId=null;
 
     @Column(name="INURE_TIME")
-    private Date inureTime;
+    private Date inureTime=null;
 
     @Column(name="EXPIRE_TIME")
-    private Date expireTime;
+    private Date expireTime=null;
 
     @Column(name="LAST_LOGIN_TIME")
-    private Date lastLogIntegerime;
+    private Date lastLogIntegerime=null;
 
     @Column(name="LAST_LOGIN_SEQ")
-    private Long lastLoginSeq;
+    private Long lastLoginSeq=null;
 
     @Column(name="PASSWD_REPEAT_CNT")
-    private Integer passwdRepeatCnt;
+    private Integer passwdRepeatCnt=null;
 
     @Column(name="LOCK_FLAG")
-    private Integer lockFlag;
+    private Integer lockFlag=null;
 
     @Column(name="OPERATOR_ALIAS")
-    private String operatorAlias;
+    private String operatorAlias=null;
 
-    private Integer gender;
+    private Integer gender=null;
 
-    private Integer headship;
+    private Integer headship=null;
 
     @Column(name="HEADSHIP_DESC")
-    private String headshipDesc;
+    private String headshipDesc=null;
 
-    private Date birthday;
+    private Date birthday=null;
 
     @Column(name="IC_TYPE")
-    private Integer icType;
+    private Integer icType=null;
 
     @Column(name="IC_NO")
-    private String icNo;
+    private String icNo=null;
 
     @Column(name="JOIN_JOB_DATE")
-    private Date joinJobDate;
+    private Date joinJobDate=null;
 
     @Column(name="POLITICS_FACE")
-    private Integer politicsFace;
+    private Integer politicsFace=null;
 
     @Column(name="EDUCATE_LEVEL")
-    private Integer educateLevel;
+    private Integer educateLevel=null;
 
     @Column(name="MAJOR_SPECIALITY")
-    private String majorSpeciality;
+    private String majorSpeciality=null;
 
     @Column(name="RECV_MSG_TYPE")
-    private Integer recvMsgType;
+    private Integer recvMsgType=null;
 
-    private Long msisdn;
+    private Long msisdn=null;
 
     @Column(name="E_MAIL")
-    private String eMail;
+    private String eMail=null;
 
-    private String nation;
+    private String nation=null;
 
-    private String description;
+    private String description=null;
 
     @Column(name="MODIFY_OPERATOR_ID")
-    private Integer modifyOperatorId;
+    private Integer modifyOperatorId=null;
 
     @Column(name="MODIFY_TIME")
-    private Date modifyTime;
+    private Date modifyTime=null;
 
     @Column(name="MODIFY_CONTENT")
-    private String modifyContent;
+    private String modifyContent=null;
 
     @Column(name="HIS_SEQ_ID")
-    private Long hisSeqId;
+    private Long hisSeqId=null;
 
     @Column(name="OA_USER_ID")
-    private Long oaUserId;
+    private Long oaUserId=null;
 
     @Column(name="OA_ACCOUNT_ID")
-    private String oaAccountId;
+    private String oaAccountId=null;
 
     @Column(name="OA_EMPLOYEE_NO")
-    private Integer oaEmployeeNo;
+    private Integer oaEmployeeNo=null;
 
-    public Long getOperatorId() {
+    public Integer getOperatorId () {
         return operatorId;
     }
 
-    public void setOperatorId(Long operatorId) {
+    public void setOperatorId (Integer operatorId) {
         this.operatorId = operatorId;
     }
 
@@ -393,5 +393,47 @@ public class OperatorOa {
 
     public void setOaEmployeeNo(Integer oaEmployeeNo) {
         this.oaEmployeeNo = oaEmployeeNo;
+    }
+
+    @Override
+    public String toString () {
+        return "OperatorOa{" +
+                "operatorId='" + operatorId + '\'' +
+                ", name='" + name + '\'' +
+                ", passwd='" + passwd + '\'' +
+                ", passwdChangeIntegererval=" + passwdChangeIntegererval +
+                ", lastPasswdChangeTime=" + lastPasswdChangeTime +
+                ", status=" + status +
+                ", identifyId='" + identifyId + '\'' +
+                ", inureTime=" + inureTime +
+                ", expireTime=" + expireTime +
+                ", lastLogIntegerime=" + lastLogIntegerime +
+                ", lastLoginSeq=" + lastLoginSeq +
+                ", passwdRepeatCnt=" + passwdRepeatCnt +
+                ", lockFlag=" + lockFlag +
+                ", operatorAlias='" + operatorAlias + '\'' +
+                ", gender=" + gender +
+                ", headship=" + headship +
+                ", headshipDesc='" + headshipDesc + '\'' +
+                ", birthday=" + birthday +
+                ", icType=" + icType +
+                ", icNo='" + icNo + '\'' +
+                ", joinJobDate=" + joinJobDate +
+                ", politicsFace=" + politicsFace +
+                ", educateLevel=" + educateLevel +
+                ", majorSpeciality='" + majorSpeciality + '\'' +
+                ", recvMsgType=" + recvMsgType +
+                ", msisdn=" + msisdn +
+                ", eMail='" + eMail + '\'' +
+                ", nation='" + nation + '\'' +
+                ", description='" + description + '\'' +
+                ", modifyOperatorId=" + modifyOperatorId +
+                ", modifyTime=" + modifyTime +
+                ", modifyContent='" + modifyContent + '\'' +
+                ", hisSeqId=" + hisSeqId +
+                ", oaUserId=" + oaUserId +
+                ", oaAccountId='" + oaAccountId + '\'' +
+                ", oaEmployeeNo=" + oaEmployeeNo +
+                '}';
     }
 }

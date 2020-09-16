@@ -12,7 +12,8 @@
             <property name="suppressAllComments" value="true"/>
         </commentGenerator>
         <!--数据库链接URL，用户名、密码 -->
-        <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.47.233.133)(PORT = 1521))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = arcdb)))" userId="bopsys" password="bopsys">
+        <jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver" connectionURL="jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS =(COMMUNITY = tcp) (PROTOCOL = TCP) (HOST =10.1.0.211 )(PORT = 1521))(CONNECT_DATA =(SERVICE_NAME = kf)))
+" userId="bopsys" password="T%RXxV#h$2">
         </jdbcConnection>
         <javaTypeResolver>
             <property name="forceBigDecimals" value="false"/>
@@ -23,16 +24,17 @@
             <property name="trimStrings" value="true"/>
             <property name="useActualColumnNames" value="true"/>
         </javaModelGenerator>
-    <!--    &lt;!&ndash; 生成映射文件的包名和位置&ndash;&gt;
-        <sqlMapGenerator targetPackage="com.zhan.order.mapper" targetProject="src/main/java">
+
+     <!--   <sqlMapGenerator targetPackage="com.newland.aqhandle.Dao" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
-        &lt;!&ndash; 生成DAO的包名和位置&ndash;&gt;
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.ideasfly.dao.mapper" targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.newland.aqhandle.Dao" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>-->
         <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
-<!--        <table tableName="operator_organ_oa" domainObjectName="OperatorOrganOa" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" />-->
+       <table tableName="aq_his_back" domainObjectName="aqHisBack" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" >
+           <property name="useActualColumnNames" value="true"/>
+       </table>
 
 
     </context>
