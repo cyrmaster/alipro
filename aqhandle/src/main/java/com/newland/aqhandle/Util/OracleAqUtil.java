@@ -88,7 +88,7 @@ public class OracleAqUtil {
             topicSubscriber=topicSession.createDurableSubscriber (topic,sSubscription);
             topicSubscriber.setMessageListener ((message)->{
                     logger.info ("开始获取aq消息");
-                    AQjmsMessage aQjmsMessage=(AQjmsMessage)message;
+                     ObjectMessage aQjmsMessage=(ObjectMessage)message;
                     logger.info ("message=:"+aQjmsMessage.toString ());
             });
         } catch (JMSException e) {

@@ -3,15 +3,13 @@ package com.newland.aqhandle;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.task.TaskExecutor;
-import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
 import java.util.concurrent.ThreadPoolExecutor;
 
 @Configuration
-@EnableAsync
-public class ExectorConfig {
-    @Bean(name = "taskExecutor")
+public class AqGetExecutor {
+    @Bean(name = "aqgetexecutor")
     public TaskExecutor taskExecutor() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor ();
         // 设置核心线程数
@@ -30,5 +28,4 @@ public class ExectorConfig {
         executor.setWaitForTasksToCompleteOnShutdown(true);
         return executor;
     }
-
 }

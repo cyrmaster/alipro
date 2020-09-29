@@ -4,12 +4,12 @@ spring:
   datasource:
     #账务库数据源配置
     account:
-      #测试bopsys库
+#     #测试bopsys库
 #     username: bopsys
 #     password: bopsys
 #     url: jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = 10.47.233.133)(PORT = 1521))(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = arcdb)))
 #     driver-class-name: oracle.jdbc.driver.OracleDriver
-      #开发bopsys库
+     #开发bopsys库
      username: bopsys
      password: T%RXxV#h$2
      url: jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS =(COMMUNITY = tcp) (PROTOCOL = TCP) (HOST =10.1.0.211 )(PORT = 1521))(CONNECT_DATA =(SERVICE_NAME = kf)))
@@ -32,9 +32,14 @@ spring:
      test-on-return: false
     #所在数据库数据源配置
     aq:
-      username: aq_connect_user
-      password: oracle123
-      url: jdbc:oracle:thin:@10.46.91.101:1521:oimdb
+#      username: aq_connect_user
+#      password: oracle123
+#      url: jdbc:oracle:thin:@10.46.91.101:1521:oimdb
+#      driver-class-name: oracle.jdbc.driver.OracleDriver
+#      type: com.alibaba.druid.pool.DruidDataSource
+      username: bopsys
+      password: T%RXxV#h$2
+      url: jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS =(COMMUNITY = tcp) (PROTOCOL = TCP) (HOST =10.1.0.211 )(PORT = 1521))(CONNECT_DATA =(SERVICE_NAME = kf)))
       driver-class-name: oracle.jdbc.driver.OracleDriver
       type: com.alibaba.druid.pool.DruidDataSource
       # 下面为连接池的补充设置，应用到上面所有数据源中
@@ -65,8 +70,8 @@ aq:
 # slf4j日志配置
 logging:
  file:
-   name: ${user.dir}/log/aqhandle-${time}.log
-  # 配置级别
+   name: ${user.dir}/log/aqhandle.log
+  # 配置级别${time}
   #分包配置级别，即不同的目录下可以使用不同的级别
  level:
   com: error
